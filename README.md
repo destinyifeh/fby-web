@@ -107,19 +107,6 @@ The landing page (`src/app/page.tsx`) composes the following sections in order. 
 
 Configured via `postcss.config.mjs` with the `@tailwindcss/postcss` plugin. Global styles and theme tokens are defined in `src/app/globals.css`.
 
-### Custom Animations
-
-Defined as `@keyframes` in `globals.css`:
-
-| Animation          | Description                   |
-| ------------------ | ----------------------------- |
-| `fade-in`          | Fade in + slide down on mount |
-| `fade-up`          | Fade in + slide up on scroll  |
-| `image-glow`       | Subtle glow effect for images |
-| `shimmer`          | Shimmer sweep effect          |
-| `marquee`          | Horizontal infinite scroll    |
-| `marquee-vertical` | Vertical infinite scroll      |
-
 ### Fonts
 
 | Font         | Usage                        |
