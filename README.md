@@ -8,15 +8,12 @@
 
 - [Overview](#overview)
 - [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [Available Scripts](#available-scripts)
 - [Page Sections](#page-sections)
 - [UI Components](#ui-components)
-- [Assets](#assets)
 - [Styling & Theming](#styling--theming)
 - [Configuration](#configuration)
-- [Deployment](#deployment)
 
 ---
 
@@ -39,58 +36,6 @@
 | Icons         | [Lucide React](https://lucide.dev/)                         |
 | Fonts         | Geist (sans + mono), Inter, Abhaya Libre (via Google Fonts) |
 | Compiler      | React Compiler (`babel-plugin-react-compiler`)              |
-
----
-
-## Project Structure
-
-```
-face-by-you-web/
-├── public/                     # Static files (SVGs, favicon)
-├── src/
-│   ├── app/                    # Next.js App Router
-│   │   ├── layout.tsx          # Root layout — fonts, metadata, global CSS
-│   │   ├── page.tsx            # Main landing page — navigation + section composition
-│   │   ├── globals.css         # Tailwind imports, CSS variables, keyframe animations
-│   │   └── favicon.ico
-│   ├── assets/                 # Image assets (WebP)
-│   │   ├── fby-header-logo.webp
-│   │   ├── fby-logo.webp
-│   │   ├── diverse-faces.webp
-│   │   ├── makeup-faces.webp
-│   │   ├── makeup-{1..5}.webp
-│   │   ├── image-{29,30,33,35}.webp
-│   │   ├── iphone-16-pro.webp
-│   │   ├── iphone-16-pro-1.webp
-│   │   ├── Group-2067.webp
-│   │   ├── Group-460-2.webp
-│   │   ├── Line-13.webp
-│   │   └── social-{insta,linkedin,tiktok}.webp
-│   ├── components/
-│   │   ├── sections/           # Page section components
-│   │   │   ├── HeaderSection.tsx
-│   │   │   ├── HeroSection.tsx
-│   │   │   ├── FeaturesSection.tsx
-│   │   │   ├── FeaturesComingSoonSection.tsx
-│   │   │   ├── GuidanceSection.tsx
-│   │   │   ├── AboutUsSection.tsx
-│   │   │   ├── CareerExploreSection.tsx
-│   │   │   └── FooterSection.tsx
-│   │   └── ui/                 # Reusable Shadcn UI primitives
-│   │       ├── badge.tsx
-│   │       ├── button.tsx
-│   │       ├── card.tsx
-│   │       └── input.tsx
-│   └── lib/
-│       └── utils.ts            # Utility helpers (cn, etc.)
-├── components.json             # Shadcn UI configuration
-├── eslint.config.mjs           # ESLint config
-├── next.config.ts              # Next.js config (React Compiler enabled)
-├── postcss.config.mjs          # PostCSS config
-├── tailwind.css                # Tailwind entrypoint
-├── tsconfig.json               # TypeScript config (path alias @/* → ./src/*)
-└── package.json
-```
 
 ---
 
@@ -130,7 +75,6 @@ The page hot-reloads as you edit source files.
 | `dev`   | `npm run dev`   | Start the development server         |
 | `build` | `npm run build` | Create an optimised production build |
 | `start` | `npm run start` | Serve the production build           |
-| `lint`  | `npm run lint`  | Run ESLint across the project        |
 
 ---
 
@@ -154,33 +98,6 @@ The landing page (`src/app/page.tsx`) composes the following sections in order. 
 
 - **Desktop**: Pill-style navbar with smooth-scroll anchors (`Home`, `About`, `Features`, `Business`).
 - **Mobile**: Full-screen animated overlay with icon-labelled nav items. Toggled via a hamburger button.
-
----
-
-## UI Components
-
-Located in `src/components/ui/`, these are [Shadcn UI](https://ui.shadcn.com/) primitives configured with [class-variance-authority](https://cva.style/):
-
-| Component | File         | Usage                           |
-| --------- | ------------ | ------------------------------- |
-| Badge     | `badge.tsx`  | Section labels and tags         |
-| Button    | `button.tsx` | CTAs, navigation toggle         |
-| Card      | `card.tsx`   | Feature cards in the bento grid |
-| Input     | `input.tsx`  | Email / waitlist form input     |
-
----
-
-## Assets
-
-All image assets live in `src/assets/` and are served as **WebP** for optimal performance. Key assets include:
-
-- **Logos**: `fby-header-logo.webp`, `fby-logo.webp`
-- **Hero imagery**: `diverse-faces.webp`, `makeup-faces.webp`
-- **Feature previews**: `image-29.webp` – `image-35.webp`
-- **Makeup thumbnails**: `makeup-1.webp` – `makeup-5.webp`
-- **Device mockups**: `iphone-16-pro.webp`, `iphone-16-pro-1.webp`
-- **Social icons**: `social-insta.webp`, `social-linkedin.webp`, `social-tiktok.webp`
-- **Decorative**: `Group-2067.webp`, `Group-460-2.webp`, `Line-13.webp`
 
 ---
 
@@ -230,31 +147,6 @@ Defined as `@keyframes` in `globals.css`:
 | `components.json`    | Shadcn UI — New York style, Lucide icons, CSS variables |
 | `eslint.config.mjs`  | ESLint — extends `eslint-config-next`                   |
 | `postcss.config.mjs` | PostCSS — Tailwind CSS plugin                           |
-
----
-
-## Deployment
-
-### Vercel (Recommended)
-
-The easiest way to deploy is via the [Vercel Platform](https://vercel.com/new):
-
-```bash
-npm run build   # Verify the build succeeds locally
-```
-
-Then connect the repository on Vercel — it will auto-detect Next.js and configure the build.
-
-### Other Platforms
-
-Any platform that supports Node.js can host this app:
-
-```bash
-npm run build
-npm run start
-```
-
-The production server runs on port `3000` by default.
 
 ---
 
