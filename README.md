@@ -27,10 +27,10 @@
 
 | Layer         | Technology                                                  |
 | ------------- | ----------------------------------------------------------- |
-| Framework     | [Next.js 16](https://nextjs.org/) (App Router)              |
-| Language      | TypeScript 5                                                |
-| UI Library    | React 19                                                    |
-| Styling       | Tailwind CSS 4 + custom CSS animations                      |
+| Framework     | [Next.js](https://nextjs.org/) (App Router)                 |
+| Language      | TypeScript                                                  |
+| UI Library    | React                                                       |
+| Styling       | Tailwind CSS + custom CSS animations                        |
 | Component Kit | [Shadcn UI](https://ui.shadcn.com/) (New York style)        |
 | Animations    | [Framer Motion](https://www.framer.com/motion/)             |
 | Icons         | [Lucide React](https://lucide.dev/)                         |
@@ -106,13 +106,6 @@ The landing page (`src/app/page.tsx`) composes the following sections in order. 
 ### Tailwind CSS 4
 
 Configured via `postcss.config.mjs` with the `@tailwindcss/postcss` plugin. Global styles and theme tokens are defined in `src/app/globals.css`.
-
-### Design Tokens
-
-The project uses CSS custom properties (OKLCH colour space) for full light / dark mode support:
-
-- **Brand colours**: warm browns (`#8d5241`, `#a67b5b`), cream (`#fff2da`, `#fff7ec`)
-- **Radius scale**: `--radius` base of `0.625rem` with sm → 4xl variants
 
 ### Custom Animations
 
