@@ -11,7 +11,6 @@
 - [Getting Started](#getting-started)
 - [Available Scripts](#available-scripts)
 - [Page Sections](#page-sections)
-- [UI Components](#ui-components)
 - [Styling & Theming](#styling--theming)
 - [Configuration](#configuration)
 
@@ -19,7 +18,7 @@
 
 ## Overview
 
-**Face By You** is a landing page for an AI-driven makeup companion app. The site showcases the product's core value — scanning a user's face, identifying skin tone, and providing personalised makeup guidance — through rich animations, a responsive layout, and a modern single-page design.
+**Face By You** is a website for an AI-driven makeup companion app. The site showcases the product's core value — scanning a user's face, identifying skin tone, and providing personalised makeup guidance — through rich animations, a responsive layout, and a modern design.
 
 ---
 
