@@ -18,7 +18,7 @@
 
 ## Overview
 
-**Face By You** is a website for an AI-driven makeup companion app. The site showcases the product's core value — scanning a user's face, identifying skin tone, and providing personalised makeup guidance — through rich animations, a responsive layout, and a modern design.
+**Face By You** is a website for an AI-driven makeup companion app. The site showcases the product's core value, scanning a user's face, identifying skin tone, and providing personalised makeup guidance, through rich animations, a responsive layout, and a modern design.
 
 ---
 
