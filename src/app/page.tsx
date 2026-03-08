@@ -143,7 +143,7 @@ export default function Home() {
           onClick={() => {
             toast.info("Coming soon! 🚀", {
               description:
-                "Coming Soon! In the meantime, join our waitlist for exclusive early access!",
+                "In the meantime, join our waitlist for exclusive early access!",
               action: {
                 label: "Join Waitlist",
                 onClick: () => {
