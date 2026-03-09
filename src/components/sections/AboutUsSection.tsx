@@ -5,8 +5,8 @@ import { Badge } from "@/components/ui/badge";
 
 export const AboutUsSection = () => {
   return (
-    <section className="relative w-full flex flex-col lg:flex-row items-start gap-8 lg:gap-12 pt-24 pb-12 lg:py-20 px-4 max-w-[1568px] mx-auto">
-      <div className="w-full lg:max-w-[448px] flex-shrink-0 animate-fade-in [--animation-delay:0ms]">
+    <section className="relative w-full flex flex-col lg:flex-row items-start gap-8 lg:gap-12 pt-12 pb-12 lg:py-20 px-4 max-w-[1568px] mx-auto">
+      <div className="w-full lg:max-w-[448px] flex-shrink-0 animate-fade-in [--animation-delay:0ms] order-2 lg:order-1">
         <img
           className="w-full h-auto object-cover rounded-2xl"
           alt="About Us illustration"
@@ -14,7 +14,7 @@ export const AboutUsSection = () => {
         />
       </div>
 
-      <div className="flex-1 flex flex-col items-start gap-8 lg:gap-12 pt-2">
+      <div className="flex-1 flex flex-col items-start gap-8 lg:gap-12 pt-2 order-1 lg:order-2">
         <Badge
           variant="outline"
           className="inline-flex items-center justify-center h-[60px] px-6 gap-[10px] rounded-[30px] border-2 border-transparent bg-clip-padding bg-gradient-to-r from-[#E3BCB5] via-[#F9BC99] to-[#E3BCB5] [background-origin:border-box] [mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)][mask-composite:exclude] transition-all hover:opacity-90"

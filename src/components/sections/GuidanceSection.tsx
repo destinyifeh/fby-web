@@ -3,7 +3,6 @@
 import iphone16Pro1 from "@/assets/iphone-16-pro-1.webp";
 import iphone16Pro from "@/assets/iphone-16-pro.webp";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronRightIcon } from "lucide-react";
 
 const features = [
   {
@@ -44,7 +43,7 @@ export const GuidanceSection = () => {
                       >
                         {feature.title}
                       </p>
-                      <ChevronRightIcon className="w-8 h-8 md:w-10 md:h-10 text-[#8d5241] flex-shrink-0" />
+                      {/* <ChevronRightIcon className="w-8 h-8 md:w-10 md:h-10 text-[#8d5241] flex-shrink-0" /> */}
                     </div>
                     {index < features.length - 1 && (
                       <div className="w-full h-px bg-[#8d5241] opacity-20" />
@@ -58,7 +57,6 @@ export const GuidanceSection = () => {
 
         <div className="relative w-full lg:w-[632px] flex-shrink-0 animate-fade-in [--animation-delay:400ms]">
           <div className="relative w-full max-w-[632px] h-[400px] md:h-[600px] lg:h-[805px] mx-auto">
-        
             <img
               className="absolute top-0 left-0 w-[45%] md:w-80 h-auto max-h-[90%] object-contain"
               alt="iPhone Pro showing makeup scan interface"

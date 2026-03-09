@@ -79,7 +79,14 @@ export const FeaturesSection = () => {
                   build confidence through small, achievable steps that evolve
                   as you do.
                 </p>
-                <Button className="h-auto bg-[#fff2da] hover:bg-[#fff2da]/90 text-[#8d5241] rounded-full px-8 py-3 transition-transform hover:scale-105">
+                <Button
+                  onClick={() =>
+                    document
+                      .getElementById("home")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="h-auto bg-[#fff2da] hover:bg-[#fff2da]/90 text-[#8d5241] rounded-full px-8 py-3 transition-transform hover:scale-105"
+                >
                   <span className="[font-family:'Inter',Helvetica] font-medium text-lg">
                     Join waitlist
                   </span>

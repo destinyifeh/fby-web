@@ -46,7 +46,7 @@ export const HeaderSection = () => {
 
           <div className="relative animate-fade-in [--animation-delay:800ms]">
             <img
-              className="w-full h-full min-h-[956px] rounded-[0px_94px_94px_0px] object-cover"
+              className="w-full h-full min-h-[500px] lg:min-h-[760px] rounded-[0px_94px_94px_0px] object-cover"
               alt="Makeup analysis demonstration"
               src={makeup.src}
             />

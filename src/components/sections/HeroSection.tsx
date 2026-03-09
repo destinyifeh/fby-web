@@ -13,7 +13,14 @@ export const HeroSection = () => {
     <section className="relative w-full max-w-[1728px] mx-auto">
       <div className="flex flex-col gap-[30px] bg-[#fff4e3] rounded-[20px] pb-0">
         <div className="w-full max-w-[1563px] mx-auto px-4 pt-[60px] flex flex-col items-center">
-          <Button className="animate-fade-in [--animation-delay:0ms] w-[271px] h-16 bg-[#fff2da] rounded-[30px] border-none backdrop-blur-[2.0px] backdrop-brightness-[110%] shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.1)] relative before:content-[''] before:absolute before:inset-0 before:p-[2px] before:rounded-[30px] before:[background:linear-gradient(90deg,rgba(227,188,181,1)_18%,rgba(249,188,153,1)_53%,rgba(227,188,181,1)_78%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none hover:bg-[#fff2da]">
+          <Button
+            onClick={() =>
+              document
+                .getElementById("footer-waitlist")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="cursor-pointer animate-fade-in [--animation-delay:0ms] w-[271px] h-16 bg-[#fff2da] rounded-[30px] border-none backdrop-blur-[2.0px] backdrop-brightness-[110%] shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.1)] relative before:content-[''] before:absolute before:inset-0 before:p-[2px] before:rounded-[30px] before:[background:linear-gradient(90deg,rgba(227,188,181,1)_18%,rgba(249,188,153,1)_53%,rgba(227,188,181,1)_78%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none hover:bg-[#fff2da]"
+          >
             <span className="relative z-10 [font-family:'Abhaya_Libre-SemiBold',Helvetica] font-normal text-xl text-[#8d5241] tracking-[0] leading-[normal]">
               Join waitlist
             </span>
@@ -71,7 +78,10 @@ export const HeroSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-[29.7px] max-w-[730px] w-full lg:mt-[150px]">
+        <div
+          id="footer-waitlist"
+          className="flex flex-col gap-[29.7px] max-w-[730px] w-full lg:mt-[150px]"
+        >
           <div className="flex flex-col gap-[30px]">
             <div className="relative min-h-[60px] md:h-[70px]">
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center bg-[#fff2da] rounded-[24px] sm:rounded-[500px] border border-solid border-[#e3bcb5] p-2 sm:pl-[38px] sm:pr-2 gap-4">
