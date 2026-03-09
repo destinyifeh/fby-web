@@ -1,17 +1,13 @@
 "use client";
 
-import group4602 from "@/assets/Group-460-2.webp";
+import { ChatAnimation } from "@/components/ui/ChatAnimation";
 import { Badge } from "@/components/ui/badge";
 
 export const AboutUsSection = () => {
   return (
     <section className="relative w-full flex flex-col lg:flex-row items-start gap-8 lg:gap-12 pt-12 pb-12 lg:py-20 px-4 max-w-[1568px] mx-auto">
       <div className="w-full lg:max-w-[448px] flex-shrink-0 animate-fade-in [--animation-delay:0ms] order-2 lg:order-1">
-        <img
-          className="w-full h-auto object-cover rounded-2xl"
-          alt="About Us illustration"
-          src={group4602.src}
-        />
+        <ChatAnimation />
       </div>
 
       <div className="flex-1 flex flex-col items-start gap-8 lg:gap-12 pt-2 order-1 lg:order-2">
