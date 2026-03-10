@@ -18,7 +18,7 @@ export const FooterSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    return;
     if (!formData.firstname || !formData.lastname || !formData.email) {
       toast.error("Please fill in all fields.");
       return;

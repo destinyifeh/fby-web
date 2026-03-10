@@ -132,7 +132,7 @@ export const HeroSection = () => {
                   className="flex-1 h-12 sm:h-auto border-none bg-transparent [font-family:'Inter',Helvetica] font-medium text-[#8d5241] text-lg md:text-xl tracking-[0] leading-[normal] placeholder:text-[#8d5241] focus-visible:ring-0 focus-visible:ring-offset-0"
                 />
                 <Button
-                  onClick={handleJoinWaitlist}
+                  // onClick={handleJoinWaitlist}
                   disabled={isLoading}
                   className="w-full sm:w-[241px] h-12 sm:h-[60px] bg-[#8d5241] hover:bg-[#a67b5b] rounded-[16px] sm:rounded-[500px] transition-colors shrink-0"
                 >

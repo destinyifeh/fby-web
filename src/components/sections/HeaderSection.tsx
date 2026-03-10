@@ -73,7 +73,7 @@ export const HeaderSection = () => {
                       className="flex-1 border-0 bg-transparent [font-family:'Inter',Helvetica] font-medium text-[#8d5241] text-base md:text-lg placeholder:text-[#8d5241] focus-visible:ring-0 h-12 sm:h-auto"
                     />
                     <Button
-                      onClick={handleJoinWaitlist}
+                      // onClick={handleJoinWaitlist}
                       disabled={isLoading}
                       className="bg-[#8d5241] hover:bg-[#8d5241]/90 text-[#fff2da] rounded-[16px] sm:rounded-[500px] h-14 md:h-[60px] px-5 md:px-8 [font-family:'Inter',Helvetica] font-medium text-base md:text-lg transition-colors"
                     >

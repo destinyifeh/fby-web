@@ -11,16 +11,7 @@ import { HeaderSection } from "@/components/sections/HeaderSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  Briefcase,
-  Heart,
-  HelpCircle,
-  Home as HomeIcon,
-  Info,
-  Menu,
-  PlusCircle,
-  X,
-} from "lucide-react";
+import { Heart, Home as HomeIcon, Info, Menu, X } from "lucide-react";
 import React, { useState } from "react";
 import { toast } from "sonner";
 
@@ -46,34 +37,6 @@ const navigationItems = [
     icon: Heart,
     showOnDesktop: true,
   },
-  {
-    label: "Business",
-    active: false,
-    href: "#business",
-    icon: Briefcase,
-    showOnDesktop: true,
-  },
-  {
-    label: "Join Waitlist",
-    active: false,
-    href: "#home",
-    icon: PlusCircle,
-    showOnDesktop: false,
-  },
-  {
-    label: "Career",
-    active: false,
-    href: "#business",
-    icon: Briefcase,
-    showOnDesktop: false,
-  },
-  {
-    label: "Support",
-    active: false,
-    href: "#footer",
-    icon: HelpCircle,
-    showOnDesktop: false,
-  },
 ];
 
 export default function Home() {
@@ -82,12 +45,26 @@ export default function Home() {
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string,
+    label?: string,
   ) => {
-    e.preventDefault();
     setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    if (label === "Support") {
+      e.preventDefault();
+      toast.info("Need help? 💌", {
+        description:
+          "Contact us at admin@facebyyou.tech for support, reports, or general inquiries.",
+        duration: 5000,
+      });
+      return;
+    }
+
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
 
@@ -205,7 +182,7 @@ export default function Home() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
                       href={item.href}
-                      onClick={(e) => handleNavClick(e, item.href)}
+                      onClick={(e) => handleNavClick(e, item.href, item.label)}
                       className="flex items-center gap-4 px-6 py-5 bg-[#FFF2DA] border border-[#a67b5b]/10 rounded-[20px] transition-all hover:bg-[#FFF2DA]/80 active:scale-[0.98]"
                     >
                       <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#FFF2DA] text-[#8D5241]">
