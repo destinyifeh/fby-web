@@ -13,7 +13,7 @@ interface Message {
 const conversation: Message[] = [
   {
     id: 1,
-    text: "Hey girl I know your birthday is coming up, do you want to book an appointment?",
+    text: "Hey girl you missed your birthday appointment. Did you want to reschedule?",
     isOutgoing: false,
   },
   {
@@ -65,38 +65,54 @@ export const ChatAnimation = () => {
     const currentMsg = conversation[currentIndex];
 
     if (currentMsg.isOutgoing) {
-      // Start typing animation
-      setIsTyping(true);
-      let charIndex = 0;
-      const typeInterval = setInterval(() => {
-        if (charIndex < currentMsg.text.length) {
-          const char = currentMsg.text[charIndex].toLowerCase();
-          setActiveKey(char);
-          setTypingText(currentMsg.text.slice(0, charIndex + 1));
-          charIndex++;
-          setTimeout(() => setActiveKey(null), 100);
-        } else {
-          clearInterval(typeInterval);
-          setActiveKey(null);
-          setTimeout(() => {
-            setVisibleMessages((prev) => [...prev, currentMsg]);
-            setTypingText("");
-            setIsTyping(false);
-            setCurrentIndex((prev) => prev + 1);
-          }, 1000); // Slowed down
-        }
-      }, 100); // Slower typing
-      return () => clearInterval(typeInterval);
+      // Wait a bit before human starts "typing" (simulates reading)
+      const startTypingDelay = setTimeout(() => {
+        setIsTyping(true);
+        let charIndex = 0;
+        const typeInterval = setInterval(() => {
+          if (charIndex < currentMsg.text.length) {
+            const char = currentMsg.text[charIndex].toLowerCase();
+            // Map characters to keyboard keys
+            if (char === " ") {
+              setActiveKey("space");
+            } else if (/[a-z]/.test(char)) {
+              setActiveKey(char);
+            } else {
+              // Map punctuation, symbols, and emojis to "123" key
+              setActiveKey("123");
+            }
+            setTypingText(currentMsg.text.slice(0, charIndex + 1));
+            charIndex++;
+            setTimeout(() => setActiveKey(null), 100);
+          } else {
+            clearInterval(typeInterval);
+            // Highlight return key when "sending" the message
+            setActiveKey("return");
+            setTimeout(() => {
+              setActiveKey(null);
+              setVisibleMessages((prev) => [...prev, currentMsg]);
+              setTypingText("");
+              setIsTyping(false);
+              setCurrentIndex((prev) => prev + 1);
+            }, 500); // Slightly more pause on return key
+          }
+        }, 130); // Slower typing speed
+        return () => clearInterval(typeInterval);
+      }, 2000); // 2 second thinking delay for human
+      return () => clearTimeout(startTypingDelay);
     } else {
       // Incoming message delay with typing indicator
       setIsMUATyping(true);
       const timer = setTimeout(
         () => {
           setIsMUATyping(false);
-          setVisibleMessages((prev) => [...prev, currentMsg]);
-          setCurrentIndex((prev) => prev + 1);
+          // Very fast transition from dots disappearing to message appearing
+          setTimeout(() => {
+            setVisibleMessages((prev) => [...prev, currentMsg]);
+            setCurrentIndex((prev) => prev + 1);
+          }, 50);
         },
-        currentIndex === 0 ? 1000 : 3000, // Slower incoming
+        currentIndex === 0 ? 2500 : 5000, // Slower MUA pacing
       );
       return () => clearTimeout(timer);
     }
@@ -257,11 +273,29 @@ export const ChatAnimation = () => {
           </div>
         </div>
         <div className="flex gap-1.5 h-10 px-1">
-          <div className="w-20 bg-white/60 rounded flex items-center justify-center text-sm font-medium shadow-sm">
+          <div
+            className={`w-20 rounded flex items-center justify-center text-sm font-medium shadow-sm transition-all duration-100 ${
+              activeKey === "123"
+                ? "bg-gray-100 scale-105 ring-2 ring-black/5 shadow-lg"
+                : "bg-white/60"
+            }`}
+          >
             123
           </div>
-          <div className="flex-1 bg-white rounded flex items-center justify-center shadow-sm" />
-          <div className="w-20 bg-white/60 rounded flex items-center justify-center text-sm font-medium shadow-sm">
+          <div
+            className={`flex-1 rounded flex items-center justify-center shadow-sm transition-all duration-100 ${
+              activeKey === "space"
+                ? "bg-gray-100 scale-105 ring-2 ring-black/5 shadow-lg"
+                : "bg-white"
+            }`}
+          />
+          <div
+            className={`w-20 rounded flex items-center justify-center text-sm font-medium shadow-sm transition-all duration-100 ${
+              activeKey === "return"
+                ? "bg-gray-100 scale-105 ring-2 ring-black/5 shadow-lg"
+                : "bg-white/60"
+            }`}
+          >
             return
           </div>
         </div>
