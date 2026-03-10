@@ -3,8 +3,46 @@
 import makeup from "@/assets/Group-2067.webp";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export const HeaderSection = () => {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleJoinWaitlist = async () => {
+    if (!email || !email.includes("@")) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success("Welcome! You've successfully joined the waitlist.", {
+          description: "Check your inbox for a welcome email. 🚀",
+        });
+        setEmail("");
+      } else {
+        toast.error(data.error || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      toast.error(
+        "Failed to connect to the server. Please check your internet connection.",
+      );
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="relative w-full max-w-[1568px] mx-auto">
       <div className="relative w-full bg-[#a67b5b] rounded-[100px] shadow-[0px_4px_4.5px_#a67b5b24] overflow-hidden border-[20px] border-[#a67b5b]">
@@ -29,10 +67,17 @@ export const HeaderSection = () => {
                     <Input
                       type="email"
                       placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      disabled={isLoading}
                       className="flex-1 border-0 bg-transparent [font-family:'Inter',Helvetica] font-medium text-[#8d5241] text-base md:text-lg placeholder:text-[#8d5241] focus-visible:ring-0 h-12 sm:h-auto"
                     />
-                    <Button className="bg-[#8d5241] hover:bg-[#8d5241]/90 text-[#fff2da] rounded-[16px] sm:rounded-[500px] h-14 md:h-[60px] px-5 md:px-8 [font-family:'Inter',Helvetica] font-medium text-base md:text-lg transition-colors">
-                      Join waitlist
+                    <Button
+                      onClick={handleJoinWaitlist}
+                      disabled={isLoading}
+                      className="bg-[#8d5241] hover:bg-[#8d5241]/90 text-[#fff2da] rounded-[16px] sm:rounded-[500px] h-14 md:h-[60px] px-5 md:px-8 [font-family:'Inter',Helvetica] font-medium text-base md:text-lg transition-colors"
+                    >
+                      {isLoading ? "Joining..." : "Join waitlist"}
                     </Button>
                   </div>
                 </div>

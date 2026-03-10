@@ -7,8 +7,46 @@ import din from "@/assets/social-linkedin.webp";
 import tiktok from "@/assets/social-tiktok.webp";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export const HeroSection = () => {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleJoinWaitlist = async () => {
+    if (!email || !email.includes("@")) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success("Welcome! You've successfully joined the waitlist.", {
+          description: "Check your inbox for a welcome email. 🚀",
+        });
+        setEmail("");
+      } else {
+        toast.error(data.error || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      toast.error(
+        "Failed to connect to the server. Please check your internet connection.",
+      );
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="relative w-full max-w-[1728px] mx-auto">
       <div className="flex flex-col gap-[30px] bg-[#fff4e3] rounded-[20px] pb-0">
@@ -88,12 +126,18 @@ export const HeroSection = () => {
                 <Input
                   type="email"
                   placeholder="Enter your email"
-                  defaultValue=""
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={isLoading}
                   className="flex-1 h-12 sm:h-auto border-none bg-transparent [font-family:'Inter',Helvetica] font-medium text-[#8d5241] text-lg md:text-xl tracking-[0] leading-[normal] placeholder:text-[#8d5241] focus-visible:ring-0 focus-visible:ring-offset-0"
                 />
-                <Button className="w-full sm:w-[241px] h-12 sm:h-[60px] bg-[#8d5241] hover:bg-[#a67b5b] rounded-[16px] sm:rounded-[500px] transition-colors shrink-0">
+                <Button
+                  onClick={handleJoinWaitlist}
+                  disabled={isLoading}
+                  className="w-full sm:w-[241px] h-12 sm:h-[60px] bg-[#8d5241] hover:bg-[#a67b5b] rounded-[16px] sm:rounded-[500px] transition-colors shrink-0"
+                >
                   <span className="[font-family:'Inter',Helvetica] font-medium text-[#fff2da] text-lg md:text-xl text-center tracking-[0] leading-[normal]">
-                    Join waitlist
+                    {isLoading ? "Joining..." : "Join waitlist"}
                   </span>
                 </Button>
               </div>

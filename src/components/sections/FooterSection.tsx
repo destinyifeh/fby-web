@@ -5,9 +5,56 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronUp, User } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
 export const FooterSection = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.firstname || !formData.lastname || !formData.email) {
+      toast.error("Please fill in all fields.");
+      return;
+    }
+
+    if (!formData.email.includes("@")) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/investor", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success("Thank you for your interest!", {
+          description:
+            "We've received your request and will be in touch shortly.",
+        });
+        setFormData({ firstname: "", lastname: "", email: "" });
+        setIsFormOpen(false);
+      } else {
+        toast.error(data.error || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Failed to submit request. Please check your connection.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <section className="relative w-full max-w-[1312px] mx-auto py-12">
@@ -50,15 +97,20 @@ export const FooterSection = () => {
           <div
             className={cn(
               "grid transition-all duration-500 ease-in-out",
-              isFormOpen ? "grid-rows-[1fr] opacity-100 mt-8" : "grid-rows-[0fr] opacity-0"
+              isFormOpen
+                ? "grid-rows-[1fr] opacity-100 mt-8"
+                : "grid-rows-[0fr] opacity-0",
             )}
           >
             <div className="overflow-hidden min-h-0">
               <div className="bg-white rounded-[20px] p-6 md:p-10 shadow-[0_4px_30px_rgba(0,0,0,0.05)] border border-[#e3bcb5]">
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2 text-left">
-                      <label htmlFor="firstname" className="block [font-family:'Abhaya_Libre-SemiBold',Helvetica] font-semibold text-[#8d5241] text-xl">
+                      <label
+                        htmlFor="firstname"
+                        className="block [font-family:'Abhaya_Libre-SemiBold',Helvetica] font-semibold text-[#8d5241] text-xl"
+                      >
                         Firstname
                       </label>
                       <div className="relative">
@@ -66,13 +118,24 @@ export const FooterSection = () => {
                         <Input
                           id="firstname"
                           type="text"
+                          required
+                          value={formData.firstname}
+                          onChange={(e) =>
+                            setFormData({
+                              ...formData,
+                              firstname: e.target.value,
+                            })
+                          }
                           placeholder="John"
                           className="h-14 pl-12 rounded-[500px] border-[#e3bcb5] focus:border-[#8d5241] focus-visible:ring-1 focus-visible:ring-[#8d5241] [font-family:'Inter',Helvetica] text-lg text-[#8d5241] placeholder:text-[#8d5241]/40"
                         />
                       </div>
                     </div>
                     <div className="space-y-2 text-left">
-                      <label htmlFor="lastname" className="block [font-family:'Abhaya_Libre-SemiBold',Helvetica] font-semibold text-[#8d5241] text-xl">
+                      <label
+                        htmlFor="lastname"
+                        className="block [font-family:'Abhaya_Libre-SemiBold',Helvetica] font-semibold text-[#8d5241] text-xl"
+                      >
                         Lastname
                       </label>
                       <div className="relative">
@@ -80,6 +143,14 @@ export const FooterSection = () => {
                         <Input
                           id="lastname"
                           type="text"
+                          required
+                          value={formData.lastname}
+                          onChange={(e) =>
+                            setFormData({
+                              ...formData,
+                              lastname: e.target.value,
+                            })
+                          }
                           placeholder="Doe"
                           className="h-14 pl-12 rounded-[500px] border-[#e3bcb5] focus:border-[#8d5241] focus-visible:ring-1 focus-visible:ring-[#8d5241] [font-family:'Inter',Helvetica] text-lg text-[#8d5241] placeholder:text-[#8d5241]/40"
                         />
@@ -88,7 +159,10 @@ export const FooterSection = () => {
                   </div>
 
                   <div className="space-y-2 text-left">
-                    <label htmlFor="email" className="block [font-family:'Abhaya_Libre-SemiBold',Helvetica] font-semibold text-[#8d5241] text-xl">
+                    <label
+                      htmlFor="email"
+                      className="block [font-family:'Abhaya_Libre-SemiBold',Helvetica] font-semibold text-[#8d5241] text-xl"
+                    >
                       Email
                     </label>
                     <div className="relative">
@@ -96,6 +170,11 @@ export const FooterSection = () => {
                       <Input
                         id="email"
                         type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
                         placeholder="Johndoe@gmail.com"
                         className="h-14 pl-12 rounded-[500px] border-[#e3bcb5] focus:border-[#8d5241] focus-visible:ring-1 focus-visible:ring-[#8d5241] [font-family:'Inter',Helvetica] text-lg text-[#8d5241] placeholder:text-[#8d5241]/40"
                       />
@@ -105,9 +184,12 @@ export const FooterSection = () => {
                   <div className="pt-4 text-center">
                     <Button
                       type="submit"
-                      className="w-full md:w-auto px-12 h-16 bg-[#8d5241] hover:bg-[#724235] text-white rounded-[500px] [font-family:'Abhaya_Libre-SemiBold',Helvetica] text-xl transition-all"
+                      disabled={isLoading}
+                      className="w-full md:w-auto px-12 h-16 bg-[#8d5241] hover:bg-[#724235] text-white rounded-[500px] [font-family:'Abhaya_Libre-SemiBold',Helvetica] text-xl transition-all disabled:opacity-50"
                     >
-                      Request Investor overview
+                      {isLoading
+                        ? "Submitting..."
+                        : "Request Investor overview"}
                     </Button>
                   </div>
                 </form>
