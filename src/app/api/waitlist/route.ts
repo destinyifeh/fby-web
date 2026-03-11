@@ -1,3 +1,4 @@
+import { EMAILS } from "@/lib/constants";
 import { resend } from "@/lib/resend";
 import fs from "fs";
 import { NextResponse } from "next/server";
@@ -24,14 +25,9 @@ export async function POST(req: Request) {
     );
     let htmlContent = fs.readFileSync(templatePath, "utf8");
 
-    // Note: Images in the template use relative paths.
-    // For a live email, these should be absolute URLs pointing to a CDN.
-    // We'll leave them as is for now as per the user's template.
-
     // 2. Send Welcome Email to User
     const { data: userData, error: userError } = await resend.emails.send({
-      // from: "Face By You <welcome@facebyyou.tech>",
-      from: "Waitlist Notifier <welcome@discussday.com>",
+      from: `Face By You <${EMAILS.NOREPLY}>`,
       to: email,
       subject: "Welcome to Face By You!",
       html: htmlContent,
@@ -55,10 +51,8 @@ export async function POST(req: Request) {
       .replace("{{dateTime}}", dateTimeStr);
 
     const { data: adminData, error: adminError } = await resend.emails.send({
-      // from: "Waitlist Notifier <notifications@facebyyou.tech>",
-      from: "Waitlist Notifier <notifications@discussday.com>",
-      // to: "Admin@facebyyou.tech",
-      to: "destechofficial@gmail.com",
+      from: `Waitlist Notifier <${EMAILS.NOREPLY}>`,
+      to: EMAILS.ADMIN,
       subject: "New Waitlist Entry!",
       html: adminHtmlContent,
     });

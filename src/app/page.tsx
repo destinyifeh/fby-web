@@ -10,6 +10,7 @@ import { GuidanceSection } from "@/components/sections/GuidanceSection";
 import { HeaderSection } from "@/components/sections/HeaderSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { Button } from "@/components/ui/button";
+import { EMAILS } from "@/lib/constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { Heart, Home as HomeIcon, Info, Menu, X } from "lucide-react";
 import React, { useState } from "react";
@@ -52,8 +53,7 @@ export default function Home() {
     if (label === "Support") {
       e.preventDefault();
       toast.info("Need help? 💌", {
-        description:
-          "Contact us at admin@facebyyou.tech for support, reports, or general inquiries.",
+        description: `Contact us at ${EMAILS.ADMIN} for support, reports, or general inquiries.`,
         duration: 5000,
       });
       return;

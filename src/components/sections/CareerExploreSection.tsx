@@ -1,6 +1,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { EMAILS } from "@/lib/constants";
 
 export const CareerExploreSection = () => {
   return (
@@ -25,12 +26,12 @@ export const CareerExploreSection = () => {
             No open position right now ? If you resonate with our mission and
             think your profile would be a great fit, send an email to{" "}
             <a
-              href="mailto:admin@facebyyou.tech"
+              href={`mailto:${EMAILS.ADMIN}`}
               rel="noopener noreferrer"
               target="_blank"
               className="underline hover:opacity-80 transition-opacity"
             >
-              admin@facebyyou.tech
+              {EMAILS.ADMIN}
             </a>{" "}
             and attach any information you believe would be relevant.
           </p>

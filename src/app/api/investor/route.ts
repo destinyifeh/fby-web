@@ -1,3 +1,4 @@
+import { EMAILS } from "@/lib/constants";
 import { resend } from "@/lib/resend";
 import fs from "fs";
 import { NextResponse } from "next/server";
@@ -31,7 +32,7 @@ export async function POST(req: Request) {
     investorHtml = investorHtml.replace("{{firstname}}", firstname);
 
     const { error: investorError } = await resend.emails.send({
-      from: "Face By You <welcome@discussday.com>",
+      from: `Face By You <${EMAILS.NOREPLY}>`,
       to: email,
       subject: "Thank you for your interest in Face By You",
       html: investorHtml,
@@ -55,8 +56,8 @@ export async function POST(req: Request) {
       .replace("{{dateTime}}", dateTimeStr);
 
     const { error: adminError } = await resend.emails.send({
-      from: "Investor Notifier <notifications@discussday.com>",
-      to: "destechofficial@gmail.com",
+      from: `Investor Notifier <${EMAILS.NOREPLY}>`,
+      to: EMAILS.ADMIN,
       subject: `New Investor Inquiry: ${firstname} ${lastname}`,
       html: adminHtml,
     });
