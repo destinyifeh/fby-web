@@ -10,7 +10,7 @@ import { GuidanceSection } from "@/components/sections/GuidanceSection";
 import { HeaderSection } from "@/components/sections/HeaderSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { Button } from "@/components/ui/button";
-import { EMAILS } from "@/lib/constants";
+import { EMAILS, ENV_LINKS } from "@/lib/constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { Heart, Home as HomeIcon, Info, Menu, X } from "lucide-react";
 import React, { useState } from "react";
@@ -88,11 +88,13 @@ export default function Home() {
               <Menu className="w-10 h-10" />
             )}
           </Button>
-          <img
-            className="w-[140px] md:w-[180px] lg:w-[236px] h-auto animate-fade-in"
-            alt="Face By You Logo"
-            src={logo.src}
-          />
+          <a href={ENV_LINKS.UAT} className="flex items-center">
+            <img
+              className="w-[140px] md:w-[180px] lg:w-[236px] h-auto animate-fade-in"
+              alt="Face By You Logo"
+              src={logo.src}
+            />
+          </a>
         </div>
 
         <div className="hidden lg:flex items-center gap-2.5 bg-[#a67b5b38] rounded-[30px] px-2.5 py-2 animate-fade-in [--animation-delay:200ms]">

@@ -1,4 +1,4 @@
-import { EMAILS } from "@/lib/constants";
+import { APP_CONFIG, EMAILS, ENV_LINKS, SOCIALS } from "@/lib/constants";
 import { resend } from "@/lib/resend";
 import fs from "fs";
 import { NextResponse } from "next/server";
@@ -29,7 +29,10 @@ export async function POST(req: Request) {
     );
     let investorHtml = fs.readFileSync(investorTemplatePath, "utf8");
 
-    investorHtml = investorHtml.replace("{{firstname}}", firstname);
+    investorHtml = investorHtml
+      .replace("{{firstname}}", firstname)
+      .replace("{{instagram_link}}", SOCIALS.INSTAGRAM)
+      .replace("{{website_link}}", ENV_LINKS.UAT);
 
     const { error: investorError } = await resend.emails.send({
       from: `Face By You <${EMAILS.NOREPLY}>`,
@@ -53,7 +56,10 @@ export async function POST(req: Request) {
       .replace("{{firstname}}", firstname)
       .replace("{{lastname}}", lastname)
       .replace("{{email}}", email)
-      .replace("{{dateTime}}", dateTimeStr);
+      .replace("{{dateTime}}", dateTimeStr)
+      .replace("{{origin}}", APP_CONFIG.ORIGIN)
+      .replace("{{status}}", APP_CONFIG.STATUS)
+      .replace("{{website_link}}", ENV_LINKS.UAT);
 
     const { error: adminError } = await resend.emails.send({
       from: `Investor Notifier <${EMAILS.NOREPLY}>`,

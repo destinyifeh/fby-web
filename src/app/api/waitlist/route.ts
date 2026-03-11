@@ -1,4 +1,4 @@
-import { EMAILS } from "@/lib/constants";
+import { APP_CONFIG, EMAILS, ENV_LINKS, SOCIALS } from "@/lib/constants";
 import { resend } from "@/lib/resend";
 import fs from "fs";
 import { NextResponse } from "next/server";
@@ -26,6 +26,10 @@ export async function POST(req: Request) {
     let htmlContent = fs.readFileSync(templatePath, "utf8");
 
     // 2. Send Welcome Email to User
+    htmlContent = htmlContent
+      .replace("{{instagram_link}}", SOCIALS.INSTAGRAM)
+      .replace("{{website_link}}", ENV_LINKS.UAT);
+
     const { data: userData, error: userError } = await resend.emails.send({
       from: `Face By You <${EMAILS.NOREPLY}>`,
       to: email,
@@ -48,7 +52,10 @@ export async function POST(req: Request) {
     // Replace placeholders
     adminHtmlContent = adminHtmlContent
       .replace("{{email}}", email)
-      .replace("{{dateTime}}", dateTimeStr);
+      .replace("{{dateTime}}", dateTimeStr)
+      .replace("{{origin}}", APP_CONFIG.ORIGIN)
+      .replace("{{status}}", APP_CONFIG.STATUS)
+      .replace("{{website_link}}", ENV_LINKS.UAT);
 
     const { data: adminData, error: adminError } = await resend.emails.send({
       from: `Waitlist Notifier <${EMAILS.NOREPLY}>`,

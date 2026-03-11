@@ -72,12 +72,19 @@
                     border-bottom: 2px solid #fff7ec;
                   "
                 >
-                  <img
-                    src="https://fby-web.vercel.app/fby-logo.png"
-                    alt="Face By You"
-                    width="150"
-                    style="display: block; width: 150px; height: auto"
-                  />
+                  <a href="{{website_link}}">
+                    <img
+                      src="https://fby-web.vercel.app/fby-logo.png"
+                      alt="Face By You"
+                      width="150"
+                      style="
+                        display: block;
+                        width: 150px;
+                        height: auto;
+                        border: 0;
+                      "
+                    />
+                  </a>
                 </td>
               </tr>
               <!-- Content -->
@@ -176,6 +183,60 @@
                               "
                             >
                               {{dateTime}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="
+                                padding-top: 24px;
+                                padding-bottom: 12px;
+                                font-family:
+                                  &quot;Inter&quot;, Helvetica, sans-serif;
+                                font-size: 14px;
+                                color: #8d5241;
+                                font-weight: bold;
+                              "
+                            >
+                              ORIGIN
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="
+                                padding-bottom: 24px;
+                                font-family:
+                                  &quot;Inter&quot;, Helvetica, sans-serif;
+                                font-size: 18px;
+                                color: #000000;
+                              "
+                            >
+                              {{origin}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="
+                                padding-bottom: 12px;
+                                font-family:
+                                  &quot;Inter&quot;, Helvetica, sans-serif;
+                                font-size: 14px;
+                                color: #8d5241;
+                                font-weight: bold;
+                              "
+                            >
+                              STATUS
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="
+                                font-family:
+                                  &quot;Inter&quot;, Helvetica, sans-serif;
+                                font-size: 18px;
+                                color: #000000;
+                              "
+                            >
+                              {{status}}
                             </td>
                           </tr>
                         </table>

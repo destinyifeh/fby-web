@@ -7,6 +7,7 @@ import din from "@/assets/social-linkedin.webp";
 import tiktok from "@/assets/social-tiktok.webp";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ENV_LINKS, SOCIALS } from "@/lib/constants";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -95,11 +96,13 @@ export const HeroSection = () => {
       <div className="mt-[-3px] bg-[#8d5241] flex flex-col lg:flex-row items-start justify-between px-6 md:px-12 lg:px-[79px] py-12 gap-12">
         <div className="flex flex-col gap-[78px] max-w-[648px]">
           <div className="relative">
-            <img
-              className="w-full max-w-[406px] h-auto"
-              alt="Face by You logo"
-              src={logo.src}
-            />
+            <a href={ENV_LINKS.UAT} className="block">
+              <img
+                className="w-full max-w-[406px] h-auto"
+                alt="Face by You logo"
+                src={logo.src}
+              />
+            </a>
             <p className="mt-4 [font-family:'Abhaya_Libre-Medium',Helvetica] font-medium text-[#fff2da] text-2xl tracking-[0] leading-[normal]">
               #BecomeYourOwnMUA
             </p>
@@ -149,7 +152,7 @@ export const HeroSection = () => {
           </div>
           <div className="flex items-center justify-center lg:justify-start gap-8 md:gap-12">
             <a
-              href="https://www.instagram.com/facebyyou/"
+              href={SOCIALS.INSTAGRAM}
               target="_blank"
               rel="noopener noreferrer"
               className="h-[60px] w-[60px] bg-[#FFF2DA] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#8d5241] group"
