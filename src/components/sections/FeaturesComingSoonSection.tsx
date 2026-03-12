@@ -119,9 +119,9 @@ export const FeaturesComingSoonSection = () => {
               {features.map((feature, index) => (
                 <Card
                   key={index}
-                  className="w-full lg:w-[calc(33.333%-22px)] flex-shrink-0 bg-[#8d5241] rounded-[24px] border-none overflow-hidden transition-all hover:scale-[1.02] flex flex-col h-[520px] lg:h-[400px]"
+                  className="w-full lg:w-[calc(33.333%-22px)] flex-shrink-0 bg-[#8d5241] rounded-[24px] border-none overflow-hidden transition-all hover:scale-[1.02] flex flex-col min-h-[500px] lg:min-h-[400px] h-auto"
                 >
-                  <CardContent className="p-8 flex flex-col h-full gap-6">
+                  <CardContent className="p-6 md:p-8 flex flex-col h-full gap-6">
                     <div className="flex-1 flex items-center justify-start relative">
                       <img
                         className={`h-auto object-contain ${feature.imageClasses}`}
@@ -131,11 +131,11 @@ export const FeaturesComingSoonSection = () => {
                     </div>
 
                     <div className="space-y-4">
-                      <h3 className="[font-family:'Abhaya_Libre_SemiBold-Regular',Helvetica] font-normal text-[#fff2da] text-3xl lg:text-[40px] leading-tight">
+                      <h3 className="[font-family:'Abhaya_Libre_SemiBold-Regular',Helvetica] font-normal text-[#fff2da] text-2xl md:text-3xl lg:text-[36px] leading-tight">
                         {feature.title}
                       </h3>
 
-                      <p className="[font-family:'Abhaya_Libre_Medium-Regular',Helvetica] font-normal text-[#fff4df] text-xl lg:text-2xl leading-relaxed opacity-90">
+                      <p className="[font-family:'Abhaya_Libre_Medium-Regular',Helvetica] font-normal text-[#fff4df] text-lg md:text-xl lg:text-xl leading-relaxed opacity-90">
                         {feature.description}
                       </p>
                     </div>
