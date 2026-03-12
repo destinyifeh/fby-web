@@ -1,7 +1,7 @@
 "use client";
 
 //import makeup from "@/assets/Group-2067.webp";
-import makeupScanLady from "@/assets/makeup-scan-lady.png";
+import makeupScanLady from "@/assets/makeup-scan-lady.webp";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
