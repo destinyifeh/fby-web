@@ -25,14 +25,14 @@ const features = [
 
 export const GuidanceSection = () => {
   return (
-    <section className="relative w-full max-w-[1727px] mx-auto bg-[#fff4e3] rounded-[20px] px-4 py-12 md:px-8 lg:px-16">
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start">
+    <section className="relative w-full max-w-[1727px] mx-auto bg-[#fff4e3] rounded-[20px] px-4 py-12 md:px-8 lg:px-16 overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-center lg:items-start">
         <div className="w-full lg:w-auto flex flex-col gap-6 lg:gap-10 animate-fade-in">
           <h2 className="[font-family:'Abhaya_Libre_ExtraBold-Regular',Helvetica] font-normal text-[#8d5241] text-2xl md:text-5xl text-center lg:text-left tracking-[0] leading-tight">
             How it works
           </h2>
 
-          <Card className="w-full lg:w-[886px] bg-[#fff9f0] border-none shadow-none rounded-[20px] animate-fade-in [--animation-delay:200ms]">
+          <Card className="w-full bg-[#fff9f0] border-none shadow-none rounded-[20px] animate-fade-in [--animation-delay:200ms]">
             <CardContent className="p-0">
               <div className="flex flex-col">
                 {features.map((feature, index) => (
@@ -55,8 +55,8 @@ export const GuidanceSection = () => {
           </Card>
         </div>
 
-        <div className="relative w-full lg:w-[632px] flex-shrink-0 animate-fade-in [--animation-delay:400ms]">
-          <div className="relative w-full max-w-[632px] h-[400px] md:h-[600px] lg:h-[805px] mx-auto">
+        <div className="relative w-full animate-fade-in [--animation-delay:400ms]">
+          <div className="relative w-full h-[400px] md:h-[600px] lg:h-[805px] mx-auto">
             <img
               className="absolute top-0 left-0 w-[45%] md:w-80 h-auto max-h-[90%] object-contain"
               alt="iPhone Pro showing makeup scan interface"
