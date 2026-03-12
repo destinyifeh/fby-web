@@ -65,9 +65,9 @@ export const HeroSection = () => {
             </span>
           </Button>
 
-          <h1 className="animate-fade-in [--animation-delay:200ms] mt-7 [font-family:'Abhaya_Libre-ExtraBold',Helvetica] font-extrabold text-[#8d5241] text-3xl md:text-6xl lg:text-7xl text-center tracking-tight leading-tight md:leading-[1.1]">
-            Be first to try Face by You
-          </h1>
+          <h2 className="animate-fade-in [--animation-delay:200ms] mt-7 [font-family:'Abhaya_Libre-ExtraBold',Helvetica] font-normal text-[#8d5241] text-2xl md:text-5xl lg:text-5xl text-center tracking-tight leading-tight md:leading-[1.1]">
+            Be the first to try Face by You
+          </h2>
 
           <p className="animate-fade-in [--animation-delay:400ms] mt-[30px] max-w-[1341px] [font-family:'Abhaya_Libre',Helvetica] font-normal text-[#8d5241] text-xl md:text-2xl text-center tracking-[0] leading-relaxed">
             We&apos;re opening early access soon. Join the list for exclusive

@@ -47,7 +47,7 @@ export const HeaderSection = () => {
     <section className="relative w-full max-w-[1568px] mx-auto">
       <div className="relative w-full bg-[#a67b5b] rounded-[100px] shadow-[0px_4px_4.5px_#a67b5b24] overflow-hidden border-[20px] border-[#a67b5b]">
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] lg:min-h-[991px]">
-          <div className="relative bg-[#fff2da] rounded-[80px] lg:rounded-tr-none lg:rounded-br-none shadow-[0px_4px_4.5px_#a67b5b24] pt-6 pb-8 px-6 md:p-12 flex flex-col justify-center">
+          <div className="relative bg-[#fff2da] rounded-[80px] lg:rounded-tr-none lg:rounded-br-none shadow-[0px_4px_4.5px_#a67b5b24] pt-4 pb-4 px-6 md:p-12 flex flex-col justify-center">
             <div className="max-w-[793px] space-y-4 lg:space-y-12 animate-fade-in">
               <h1 className="[font-family:'Abhaya_Libre_SemiBold-Regular',Helvetica] font-normal text-4xl md:text-7xl tracking-[0] leading-tight animate-fade-in">
                 <span className="text-[#8d5241]">AI powered </span>
@@ -61,7 +61,7 @@ export const HeaderSection = () => {
                 Your face, your skin tone, and your style
               </p>
 
-              <div className="space-y-3 md:space-y-8 animate-fade-in [--animation-delay:600ms]">
+              <div className="space-y-2 md:space-y-8 animate-fade-in [--animation-delay:600ms]">
                 <div className="relative w-full max-w-[732px]">
                   <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full bg-[#fff7ec] rounded-[24px] sm:rounded-[500px] border border-solid border-[#e3bcb5] p-2 sm:pr-2 sm:pl-[38px] sm:py-1.5">
                     <Input
