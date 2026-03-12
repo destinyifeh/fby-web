@@ -47,9 +47,9 @@ export const HeaderSection = () => {
     <section className="relative w-full max-w-[1568px] mx-auto">
       <div className="relative w-full bg-[#a67b5b] rounded-[100px] shadow-[0px_4px_4.5px_#a67b5b24] overflow-hidden border-[20px] border-[#a67b5b]">
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] lg:min-h-[991px]">
-          <div className="relative bg-[#fff2da] rounded-[80px] lg:rounded-tr-none lg:rounded-br-none shadow-[0px_4px_4.5px_#a67b5b24] py-10 px-6 md:p-12 flex flex-col justify-center">
-            <div className="max-w-[793px] space-y-8 lg:space-y-12 animate-fade-in">
-              <h1 className="[font-family:'Abhaya_Libre_SemiBold-Regular',Helvetica] font-normal text-5xl md:text-7xl tracking-[0] leading-tight animate-fade-in">
+          <div className="relative bg-[#fff2da] rounded-[80px] lg:rounded-tr-none lg:rounded-br-none shadow-[0px_4px_4.5px_#a67b5b24] pt-6 pb-8 px-6 md:p-12 flex flex-col justify-center">
+            <div className="max-w-[793px] space-y-4 lg:space-y-12 animate-fade-in">
+              <h1 className="[font-family:'Abhaya_Libre_SemiBold-Regular',Helvetica] font-normal text-4xl md:text-7xl tracking-[0] leading-tight animate-fade-in">
                 <span className="text-[#8d5241]">AI powered </span>
                 <span className="[font-family:'Abhaya_Libre_ExtraBold-Regular',Helvetica] text-[#f9bc99]">
                   makeup
@@ -57,7 +57,7 @@ export const HeaderSection = () => {
                 <span className="text-[#8d5241]"> assistant</span>
               </h1>
 
-              <p className="[font-family:'Abhaya_Libre_Medium-Regular',Helvetica] font-normal text-[#8d5241] text-2xl md:text-3xl tracking-[0] leading-normal animate-fade-in">
+              <p className="[font-family:'Abhaya_Libre_Medium-Regular',Helvetica] font-normal text-[#8d5241] text-xl md:text-3xl tracking-[0] leading-normal animate-fade-in">
                 Your face, your skin tone, and your style
               </p>
 
@@ -82,7 +82,7 @@ export const HeaderSection = () => {
                   </div>
                 </div>
 
-                <p className="sm:ml-[9px] text-center sm:text-left [font-family:'Inter',Helvetica] font-normal text-[#8d5241] text-sm md:text-base tracking-[0] leading-[normal]">
+                <p className="px-4 sm:px-0 sm:ml-[9px] text-center sm:text-left [font-family:'Inter',Helvetica] font-normal text-[#8d5241] text-sm md:text-base tracking-[0] leading-[normal]">
                   By entering your email, you&apos;d join our waitlist
                 </p>
               </div>
