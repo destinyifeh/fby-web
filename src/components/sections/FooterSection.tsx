@@ -57,8 +57,8 @@ export const FooterSection = () => {
   };
 
   return (
-    <section className="relative w-full max-w-[1312px] mx-auto py-12">
-      <div className="flex flex-col items-center gap-7 px-4">
+    <section className="relative w-full max-w-[1312px] mx-auto py-8 md:py-12">
+      <div className="flex flex-col items-center gap-5 md:gap-7 px-4">
         <Button
           variant="outline"
           className="inline-flex items-center justify-center h-[60px] px-6 gap-[10px] rounded-[30px] border-2 border-transparent bg-clip-padding bg-gradient-to-r from-[#E3BCB5] via-[#F9BC99] to-[#E3BCB5] [background-origin:border-box] [mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)][mask-composite:exclude] transition-all hover:opacity-90"
@@ -79,7 +79,7 @@ export const FooterSection = () => {
           you can reach out below.
         </p>
 
-        <div className="w-full max-w-[800px] mt-8 overflow-hidden transition-all duration-500 ease-in-out">
+        <div className="w-full max-w-[800px] mt-6 md:mt-8 overflow-hidden transition-all duration-500 ease-in-out">
           <Button
             variant="ghost"
             onClick={() => setIsFormOpen(!isFormOpen)}
@@ -99,7 +99,7 @@ export const FooterSection = () => {
             className={cn(
               "grid transition-all duration-500 ease-in-out",
               isFormOpen
-                ? "grid-rows-[1fr] opacity-100 mt-8"
+                ? "grid-rows-[1fr] opacity-100 mt-6 md:mt-8"
                 : "grid-rows-[0fr] opacity-0",
             )}
           >

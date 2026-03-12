@@ -59,7 +59,7 @@ export const FeaturesComingSoonSection = () => {
     window.addEventListener("resize", checkIsMobile);
     return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
-  
+
   const cardsToShowCount = isMobile ? 1 : 3;
   const maxIndex = features.length - cardsToShowCount;
 
@@ -72,8 +72,8 @@ export const FeaturesComingSoonSection = () => {
   };
 
   return (
-    <section className="w-full bg-[#fff7ec] py-12 md:py-16 px-4 overflow-hidden">
-      <div className="max-w-[1568px] mx-auto flex flex-col items-center gap-8 md:gap-10">
+    <section className="w-full bg-[#fff7ec] py-8 md:py-16 px-4 overflow-hidden">
+      <div className="max-w-[1568px] mx-auto flex flex-col items-center gap-6 md:gap-10">
         <div className="text-center space-y-4">
           <h2 className="[font-family:'Abhaya_Libre_ExtraBold-Regular',Helvetica] font-normal text-[#8d5241] text-3xl md:text-[64px] leading-tight">
             Features Coming Soon
@@ -89,7 +89,9 @@ export const FeaturesComingSoonSection = () => {
             onClick={prev}
             disabled={currentIndex === 0}
             className={`absolute -left-4 lg:-left-12 z-10 w-16 h-16 bg-[#fff2da] rounded-full flex items-center justify-center shadow-lg text-[#8d5241] transition-all border border-[#8d5241]/10 ${
-              currentIndex === 0 ? "opacity-30 cursor-not-allowed" : "hover:bg-[#8d5241] hover:text-[#fff2da]"
+              currentIndex === 0
+                ? "opacity-30 cursor-not-allowed"
+                : "hover:bg-[#8d5241] hover:text-[#fff2da]"
             }`}
           >
             <ChevronLeft size={32} />
@@ -99,7 +101,9 @@ export const FeaturesComingSoonSection = () => {
             onClick={next}
             disabled={currentIndex >= maxIndex}
             className={`absolute -right-4 lg:-right-12 z-10 w-16 h-16 bg-[#fff2da] rounded-full flex items-center justify-center shadow-lg text-[#8d5241] transition-all border border-[#8d5241]/10 ${
-              currentIndex >= maxIndex ? "opacity-30 cursor-not-allowed" : "hover:bg-[#8d5241] hover:text-[#fff2da]"
+              currentIndex >= maxIndex
+                ? "opacity-30 cursor-not-allowed"
+                : "hover:bg-[#8d5241] hover:text-[#fff2da]"
             }`}
           >
             <ChevronRight size={32} />

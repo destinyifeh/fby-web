@@ -5,8 +5,8 @@ import { EMAILS } from "@/lib/constants";
 
 export const CareerExploreSection = () => {
   return (
-    <section className="relative w-full py-12 px-4 max-w-[1568px] mx-auto">
-      <div className="max-w-6xl mx-auto flex flex-col items-center gap-8">
+    <section className="relative w-full py-8 md:py-12 px-4 max-w-[1568px] mx-auto">
+      <div className="max-w-6xl mx-auto flex flex-col items-center gap-6 md:gap-8">
         <Badge
           variant="outline"
           //className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:0ms] flex h-16 items-center justify-center gap-2.5 bg-[#fff2da] rounded-[30px] border-none backdrop-blur-[2.0px] backdrop-brightness-[110%] shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.1)] px-8 relative before:content-[''] before:absolute before:inset-0 before:p-[2px] before:rounded-[30px] before:[background:linear-gradient(90deg,rgba(227,188,181,1)_18%,rgba(249,188,153,1)_53%,rgba(227,188,181,1)_78%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none hover:scale-105"
