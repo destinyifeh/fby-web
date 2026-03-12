@@ -1,11 +1,10 @@
 "use client";
 
-import makeup from "@/assets/Group-2067.webp";
+import { ScanningFaceAnimation } from "@/components/ui/ScanningFaceAnimation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { toast } from "sonner";
-
 export const HeaderSection = () => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -90,11 +89,7 @@ export const HeaderSection = () => {
           </div>
 
           <div className="relative animate-fade-in [--animation-delay:800ms] overflow-hidden rounded-[80px] lg:rounded-tl-none lg:rounded-bl-none">
-            <img
-              className="w-full h-full min-h-[400px] lg:min-h-[760px] object-cover object-center"
-              alt="Makeup analysis demonstration"
-              src={makeup.src}
-            />
+            <ScanningFaceAnimation />
           </div>
         </div>
       </div>
