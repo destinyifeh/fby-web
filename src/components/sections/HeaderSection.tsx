@@ -47,7 +47,7 @@ export const HeaderSection = () => {
     <section className="relative w-full max-w-[1568px] mx-auto">
       <div className="relative w-full bg-[#a67b5b] rounded-[100px] shadow-[0px_4px_4.5px_#a67b5b24] overflow-hidden border-[20px] border-[#a67b5b]">
         <div className="grid grid-cols-1 lg:grid-cols-[899px_1fr] min-h-[991px]">
-          <div className="relative bg-[#fff2da] rounded-[80px_0px_0px_80px] shadow-[0px_4px_4.5px_#a67b5b24] p-12 flex flex-col justify-center">
+          <div className="relative bg-[#fff2da] rounded-[80px] lg:rounded-tr-none lg:rounded-br-none shadow-[0px_4px_4.5px_#a67b5b24] p-6 md:p-12 flex flex-col justify-center">
             <div className="max-w-[793px] space-y-12 animate-fade-in">
               <h1 className="[font-family:'Abhaya_Libre_SemiBold-Regular',Helvetica] font-normal text-5xl md:text-7xl tracking-[0] leading-tight animate-fade-in">
                 <span className="text-[#8d5241]">AI powered </span>
@@ -89,9 +89,9 @@ export const HeaderSection = () => {
             </div>
           </div>
 
-          <div className="relative animate-fade-in [--animation-delay:800ms]">
+          <div className="relative animate-fade-in [--animation-delay:800ms] overflow-hidden rounded-[80px] lg:rounded-tl-none lg:rounded-bl-none">
             <img
-              className="w-full h-full min-h-[500px] lg:min-h-[760px] rounded-[0px_94px_94px_0px] object-cover"
+              className="w-full h-full min-h-[400px] lg:min-h-[760px] object-cover"
               alt="Makeup analysis demonstration"
               src={makeup.src}
             />
