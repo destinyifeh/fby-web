@@ -61,7 +61,7 @@ export const HeaderSection = () => {
                 Your face, your skin tone, and your style
               </p>
 
-              <div className="space-y-8 animate-fade-in [--animation-delay:600ms]">
+              <div className="space-y-3 md:space-y-8 animate-fade-in [--animation-delay:600ms]">
                 <div className="relative w-full max-w-[732px]">
                   <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full bg-[#fff7ec] rounded-[24px] sm:rounded-[500px] border border-solid border-[#e3bcb5] p-2 sm:pr-2 sm:pl-[38px] sm:py-1.5">
                     <Input
