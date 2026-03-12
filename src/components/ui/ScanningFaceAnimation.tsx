@@ -41,7 +41,7 @@ const Label = ({
         animate={
           isVisible
             ? { opacity: 1, scale: 1, x: 0 }
-            : { opacity: 0, scale: 0.8, x: -10 }
+            : { opacity: 0, scale: 0.8, x: 0 }
         }
         className="ml-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-xl max-w-[240px]"
       >
@@ -107,15 +107,15 @@ export const ScanningFaceAnimation = () => {
 
       {/* Moving Scan Line */}
       <motion.div
-        className="absolute left-0 right-0 h-[3px] bg-white/40 shadow-[0_0_15px_rgba(255,255,255,0.8)] z-20 pointer-events-none"
+        className="absolute left-0 w-full h-[3px] bg-white/40 shadow-[0_0_15px_rgba(255,255,255,0.8)] z-20 pointer-events-none"
         style={{ top: `${scanProgress}%` }}
       />
 
       {/* Label 1: Eye Blend */}
       <Label
         isVisible={showLabel1}
-        text="A tiny blend here will make the colors flow better"
-        className="top-[35%] left-[15%] md:left-[20%]"
+        text="A tiny blend here will make the colors flow better."
+        className="top-[35%] left-[2%] md:left-[5%]"
         dotClassName="bg-[#f9bc99] -left-1.5 top-1/2 -translate-y-1/2"
       />
 
@@ -123,7 +123,7 @@ export const ScanningFaceAnimation = () => {
       <Label
         isVisible={showLabel2}
         text="Your blush looks amazing. Beautiful blend."
-        className="top-[55%] left-[10%] md:left-[15%]"
+        className="top-[55%] left-[2%] md:left-[5%]"
         dotClassName="bg-[#e3bcb5] -left-1.5 top-1/2 -translate-y-1/2"
       />
 
