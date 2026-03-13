@@ -106,15 +106,6 @@ The landing page (`src/app/page.tsx`) composes the following sections in order. 
 
 Configured via `postcss.config.mjs` with the `@tailwindcss/postcss` plugin. Global styles and theme tokens are defined in `src/app/globals.css`.
 
-### Fonts
-
-| Font         | Usage                        |
-| ------------ | ---------------------------- |
-| Geist Sans   | Body text (via `next/font`)  |
-| Geist Mono   | Code / monospace             |
-| Inter        | Navigation, UI labels        |
-| Abhaya Libre | Headings, CTAs, display text |
-
 ---
 
 ## Configuration
