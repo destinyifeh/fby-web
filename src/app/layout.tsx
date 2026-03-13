@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     "Face By You combines beauty + technology to give you personalized makeup guidance that understands your face, your skin tone, and your style.",
 
   openGraph: {
-    title: "Face By You | AI Powered Makeup Assistant",
+    title: "AI Powered Makeup Assistant",
     description:
       "Beauty + technology for personalized makeup guidance that understands your face.",
     url: "https://www.facebyyou.tech",
     siteName: "Face By You",
     images: [
       {
-        url: "/icon_logo.png",
+        url: "/fby-logo.png",
         width: 1200,
         height: 630,
         alt: "Face By You - AI Makeup Assistant Preview",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Face By You",
     description: "AI Powered Makeup Assistant",
-    images: ["/icon_logo.png"],
+    images: ["/fby-logo.png"],
   },
 };
 
