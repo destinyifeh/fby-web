@@ -13,10 +13,41 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// export const metadata: Metadata = {
+//   title: "Face By You - AI Powered Makeup Assistant",
+//   description:
+//     "Face By You combines beauty + technology to give you personalized makeup guidance that understands your face, your skin tone, and your style.",
+// };
+
 export const metadata: Metadata = {
   title: "Face By You - AI Powered Makeup Assistant",
   description:
     "Face By You combines beauty + technology to give you personalized makeup guidance that understands your face, your skin tone, and your style.",
+
+  openGraph: {
+    title: "Face By You | AI Powered Makeup Assistant",
+    description:
+      "Beauty + technology for personalized makeup guidance that understands your face.",
+    url: "https://www.facebyyou.tech",
+    siteName: "Face By You",
+    images: [
+      {
+        url: "/fby-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Face By You - AI Makeup Assistant Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Face By You",
+    description: "AI Powered Makeup Assistant",
+    images: ["/fby-logo.png"],
+  },
 };
 
 export default function RootLayout({
