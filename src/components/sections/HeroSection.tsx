@@ -112,7 +112,7 @@ export const HeroSection = () => {
           {/* Column Row 2 (Desktop): Heading & Input Box */}
           <div className="lg:col-span-1 flex items-center mt-8 mb-6 lg:mt-4 lg:mb-6 order-1 lg:order-none">
             <h2 className="[font-family:'Abhaya_Libre-ExtraBold',Helvetica] font-extrabold text-[#fff2da] text-2xl md:text-4xl lg:text-[42px] text-left tracking-[0] leading-tight">
-              AI Powered MakeUp assistant
+              AI Powered Makeup assistant
             </h2>
           </div>
 
