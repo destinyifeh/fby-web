@@ -5,6 +5,9 @@ export const EMAILS = {
 
 export const SOCIALS = {
   INSTAGRAM: "https://www.instagram.com/facebyyou/",
+  TIKTOK: "https://www.instagram.com/facebyyou/",
+  // TIKTOK: "https://www.tiktok.com/@facebyyou",
+  LINKEDIN: "https://www.linkedin.com/company/face-by-you/",
 } as const;
 
 export const APP_CONFIG = {

@@ -172,7 +172,7 @@ export const HeroSection = () => {
                 />
               </a>
               <a
-                href="https://www.tiktok.com/@facebyyou"
+                href={SOCIALS.TIKTOK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-[60px] w-[60px] bg-[#FFF2DA] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#8d5241] group"
@@ -184,7 +184,7 @@ export const HeroSection = () => {
                 />
               </a>
               <a
-                href="https://www.linkedin.com/company/face-by-you/"
+                href={SOCIALS.LINKEDIN}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-[60px] w-[60px] bg-[#FFF2DA] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#8d5241] group"

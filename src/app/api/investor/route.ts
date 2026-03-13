@@ -32,7 +32,9 @@ export async function POST(req: Request) {
     investorHtml = investorHtml
       .replace("{{firstname}}", firstname)
       .replace("{{instagram_link}}", SOCIALS.INSTAGRAM)
-      .replace("{{website_link}}", ENV_LINKS.UAT);
+      .replace("{{website_link}}", ENV_LINKS.UAT)
+      .replace("{{linkedin_link}}", SOCIALS.LINKEDIN)
+      .replace("{{tiktok_link}}", SOCIALS.TIKTOK);
 
     const { error: investorError } = await resend.emails.send({
       from: `Face By You <${EMAILS.NOREPLY}>`,

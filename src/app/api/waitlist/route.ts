@@ -28,8 +28,9 @@ export async function POST(req: Request) {
     // 2. Send Welcome Email to User
     htmlContent = htmlContent
       .replace("{{instagram_link}}", SOCIALS.INSTAGRAM)
-      .replace("{{website_link}}", ENV_LINKS.UAT);
-
+      .replace("{{website_link}}", ENV_LINKS.UAT)
+      .replace("{{linkedin_link}}", SOCIALS.LINKEDIN)
+      .replace("{{tiktok_link}}", SOCIALS.TIKTOK);
     const { data: userData, error: userError } = await resend.emails.send({
       from: `Face By You <${EMAILS.NOREPLY}>`,
       to: email,

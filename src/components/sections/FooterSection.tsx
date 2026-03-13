@@ -73,7 +73,7 @@ export const FooterSection = () => {
           Together, We Can Shape the Future of Beauty Technology
         </h2>
 
-        <p className="animate-fade-in [--animation-delay:400ms] max-w-[1312px] [font-family:'Abhaya_Libre',Helvetica] font-normal text-[#8d5241] text-lg text-center leading-relaxed">
+        <p className="animate-fade-in [--animation-delay:400ms] max-w-[1312px] [font-family:'Abhaya_Libre',Helvetica] font-normal text-[#8d5241] text-lg md:text-xl text-center leading-relaxed">
           We are selectively welcoming early partners who share our vision for
           AI-powered beauty. If you&apos;re interested in joining our journey,
           you can reach out below.
