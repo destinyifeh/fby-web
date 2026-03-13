@@ -1,6 +1,8 @@
 "use client";
 
-import logo from "@/assets/fby-header-logo.webp";
+// import logo from "@/assets/fby-header-logo.webp";
+import iconLogo from "@/assets/icon_logo.webp";
+import textLogo from "@/assets/text_logo.webp";
 import { AboutUsSection } from "@/components/sections/AboutUsSection";
 import { CareerExploreSection } from "@/components/sections/CareerExploreSection";
 import { FeaturesComingSoonSection } from "@/components/sections/FeaturesComingSoonSection";
@@ -88,11 +90,16 @@ export default function Home() {
               <Menu className="w-10 h-10" />
             )}
           </Button>
-          <a href={ENV_LINKS.UAT} className="flex items-center">
+          <a href={ENV_LINKS.UAT} className="flex items-end gap-0 group">
             <img
-              className="w-[140px] md:w-[180px] lg:w-[236px] h-auto animate-fade-in"
-              alt="Face By You Logo"
-              src={logo.src}
+              className="w-8 md:w-10 lg:w-12 h-auto animate-fade-in"
+              alt="Face By You Icon"
+              src={iconLogo.src}
+            />
+            <img
+              className="w-29 md:w-34 lg:w-44 h-auto animate-fade-in -ml-2 md:-ml-4"
+              alt="Face By You Text"
+              src={textLogo.src}
             />
           </a>
         </div>
@@ -159,11 +166,18 @@ export default function Home() {
               className="fixed inset-0 z-[100] bg-[#FFF2DA] lg:hidden flex flex-col p-6 gap-6 overflow-y-auto"
             >
               <div className="flex items-center justify-between mb-8">
-                <img
-                  className="w-[140px] h-auto"
-                  alt="Face By You Logo"
-                  src={logo.src}
-                />
+                <div className="flex items-end gap-0">
+                  <img
+                    className="w-8 h-auto"
+                    alt="Face By You Icon"
+                    src={iconLogo.src}
+                  />
+                  <img
+                    className="w-27 h-auto -ml-2"
+                    alt="Face By You Text"
+                    src={textLogo.src}
+                  />
+                </div>
                 <Button
                   variant="ghost"
                   size="icon"
