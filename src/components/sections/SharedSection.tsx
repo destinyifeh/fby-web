@@ -7,7 +7,7 @@ import { ChevronDown, ChevronUp, User } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
-export const FooterSection = () => {
+export const SharedSection = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstname: "",

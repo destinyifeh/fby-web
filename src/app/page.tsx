@@ -7,10 +7,10 @@ import { AboutUsSection } from "@/components/sections/AboutUsSection";
 import { CareerExploreSection } from "@/components/sections/CareerExploreSection";
 import { FeaturesComingSoonSection } from "@/components/sections/FeaturesComingSoonSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
-import { FooterSection } from "@/components/sections/FooterSection";
 import { GuidanceSection } from "@/components/sections/GuidanceSection";
 import { HeaderSection } from "@/components/sections/HeaderSection";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { SharedSection } from "@/components/sections/SharedSection";
 import { Button } from "@/components/ui/button";
 import { EMAILS, ENV_LINKS } from "@/lib/constants";
 import { AnimatePresence, motion } from "framer-motion";
@@ -90,7 +90,7 @@ export default function Home() {
               <Menu className="w-10 h-10" />
             )}
           </Button>
-          <a href={ENV_LINKS.UAT} className="flex items-end gap-0 group">
+          <a href={ENV_LINKS.PROD} className="flex items-end gap-0 group">
             <img
               className="w-8 md:w-10 lg:w-12 h-auto animate-fade-in"
               alt="Face By You Icon"
@@ -317,7 +317,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="w-full"
         >
-          <FooterSection />
+          <SharedSection />
         </motion.section>
 
         {/* 9. Be first to try / Final Site Footer */}

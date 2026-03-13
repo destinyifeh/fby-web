@@ -97,7 +97,7 @@ export const HeroSection = () => {
         <div className="max-w-[1563px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12">
           {/* Row 1: Logo & Tagline */}
           <div className="lg:col-span-2 mb-4 lg:mb-6">
-            <a href={ENV_LINKS.UAT} className="block">
+            <a href={ENV_LINKS.PROD} className="block">
               <img
                 className="w-full max-w-[406px] h-auto"
                 alt="Face by You logo"

@@ -17,5 +17,4 @@ export const APP_CONFIG = {
 
 export const ENV_LINKS = {
   PROD: "https://facebyyou.tech/",
-  UAT: "https://fby-web.vercel.app/",
 } as const;

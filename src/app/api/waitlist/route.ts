@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     // 2. Send Welcome Email to User
     htmlContent = htmlContent
       .replace("{{instagram_link}}", SOCIALS.INSTAGRAM)
-      .replace("{{website_link}}", ENV_LINKS.UAT)
+      .replace("{{website_link}}", ENV_LINKS.PROD)
       .replace("{{linkedin_link}}", SOCIALS.LINKEDIN)
       .replace("{{tiktok_link}}", SOCIALS.TIKTOK);
     const { data: userData, error: userError } = await resend.emails.send({
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
       .replace("{{dateTime}}", dateTimeStr)
       .replace("{{origin}}", APP_CONFIG.ORIGIN)
       .replace("{{status}}", APP_CONFIG.STATUS)
-      .replace("{{website_link}}", ENV_LINKS.UAT);
+      .replace("{{website_link}}", ENV_LINKS.PROD);
 
     const { data: adminData, error: adminError } = await resend.emails.send({
       from: `Waitlist Notifier <${EMAILS.NOREPLY}>`,

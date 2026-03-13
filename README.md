@@ -90,7 +90,7 @@ The landing page (`src/app/page.tsx`) composes the following sections in order. 
 | 5   | `AboutUsSection`            | `#about`    | Team / mission statement with imagery                                     |
 | 6   | `FeaturesComingSoonSection` | —           | Preview of upcoming features with makeup thumbnails                       |
 | 7   | `CareerExploreSection`      | `#business` | Career opportunities and explore-positions CTA                            |
-| 8   | `FooterSection`             | —           | Partner-with-us details and links                                         |
+| 8   | `SharedSection`             | —           | Partner-with-us details and links                                         |
 | 9   | `HeroSection`               | —           | Final CTA ("Be first to try"), social icons (Instagram, TikTok, LinkedIn) |
 
 ### Navigation

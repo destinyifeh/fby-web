@@ -1,7 +1,7 @@
 "use client";
 
 import logo from "@/assets/fby-header-logo.webp";
-import { FooterSection } from "@/components/sections/FooterSection";
+import { SharedSection } from "@/components/sections/SharedSection";
 import { ENV_LINKS } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { ChevronLeft } from "lucide-react";
@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
           <ChevronLeft className="w-5 h-5" />
           <span className="font-medium text-lg">Back to Home</span>
         </Link>
-        <a href={ENV_LINKS.UAT}>
+        <a href={ENV_LINKS.PROD}>
           <img
             className="w-[120px] lg:w-[180px] h-auto"
             alt="Face By You Logo"
@@ -103,7 +103,7 @@ export default function PrivacyPolicy() {
         </div>
       </motion.main>
 
-      <FooterSection />
+      <SharedSection />
     </div>
   );
 }

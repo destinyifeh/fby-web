@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     investorHtml = investorHtml
       .replace("{{firstname}}", firstname)
       .replace("{{instagram_link}}", SOCIALS.INSTAGRAM)
-      .replace("{{website_link}}", ENV_LINKS.UAT)
+      .replace("{{website_link}}", ENV_LINKS.PROD)
       .replace("{{linkedin_link}}", SOCIALS.LINKEDIN)
       .replace("{{tiktok_link}}", SOCIALS.TIKTOK);
 
@@ -61,7 +61,7 @@ export async function POST(req: Request) {
       .replace("{{dateTime}}", dateTimeStr)
       .replace("{{origin}}", APP_CONFIG.ORIGIN)
       .replace("{{status}}", APP_CONFIG.STATUS)
-      .replace("{{website_link}}", ENV_LINKS.UAT);
+      .replace("{{website_link}}", ENV_LINKS.PROD);
 
     const { error: adminError } = await resend.emails.send({
       from: `Investor Notifier <${EMAILS.NOREPLY}>`,
